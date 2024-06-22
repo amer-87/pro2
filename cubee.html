@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكعب صور ثلاثي الأبعاد مع صوت</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            perspective: 1000px;
+        }
+
+        h1 {
+            margin-bottom: 60px;
+        }
+
+        .cube {
+            position: relative;
+            width: 200px;
+            transform-style: preserve-3d;
+            transform: rotateX(-30deg) rotateY(-45deg);
+            animation: rotateCube 10s infinite linear;
+        }
+
+        .cube div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #ccc;
+        }
+
+        .front  { transform: translateZ(100px); background-image: url('/IMG-20230708-WA0001.jpg'); }
+        .back   { transform: rotateY(180deg) translateZ(100px); background-image: url('/IMG-20231019-WA0035.jpg'); }
+        .right  { transform: rotateY(90deg) translateZ(100px); background-image: url('/IMG-20240212-WA0010.jpg'); }
+        .left   { transform: rotateY(-90deg) translateZ(100px); background-image: url('/IMG-20240617-WA0005.jpg'); }
+        .top    { transform: rotateX(90deg) translateZ(100px); background-image: url('/IMG20230707234743.jpg'); }
+        .bottom { transform: rotateX(-90deg) translateZ(100px); background-image: url('/IMG20240617183639.jpg'); }
+
+        @keyframes rotateCube {
+            from {
+                transform: rotateX(-30deg) rotateY(-45deg);
+            }
+            to {
+                transform: rotateX(-30deg) rotateY(315deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>my ❤️❤️ family</h1>
+    <div class="cube">
+        <div class="front"></div>
+        <div class="back"></div>
+        <div class="right"></div>
+        <div class="left"></div>
+        <div class="top"></div>
+        <div class="bottom"></div>
+    </div>
+    <audio controls autoplay hidden>
+        <source src="/اجمل رنه هاتف  نغمات رنين الموبايل  Mobile Phone Best Ringtone(720P_HD)(mp3).mp3" type="audio/mpeg">
+        المتصفح الخاص بك لا يدعم عنصر الصوت.
+    </audio>
+</body>
+</html>
